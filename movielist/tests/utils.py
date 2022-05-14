@@ -1,8 +1,7 @@
 from random import sample, randint, choice
 from faker import Faker
 
-from movielist.models import Person, Movie
-
+from models import Person, Movie
 
 faker = Faker("pl_PL")
 
@@ -46,4 +45,3 @@ def create_fake_movie():
     new_movie = Movie.objects.create(**movie_data)
     for actor in actors:
         new_movie.actors.add(find_person_by_name(actor))
-
